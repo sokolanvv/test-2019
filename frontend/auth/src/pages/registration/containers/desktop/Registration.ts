@@ -2,6 +2,8 @@ import { connect } from 'react-redux'
 import { change, register } from '../../actions'
 import Registration from '../../components/desktop/Registration'
 
+import { login } from '../../../login/actions'
+
 export default connect(
   state => ({
     email: state.auth.registration.email,
@@ -10,7 +12,10 @@ export default connect(
     confirmPassword: state.auth.registration.confirmPassword,
   }),
   dispatch => ({
-    onRegister: () => dispatch(register()),
+    onRegister: () => {
+      dispatch(register())
+      dispatch(login())
+    },
     onChangeEmail: value => dispatch(change('email', value)),
     onChangePassword: value => dispatch(change('password', value)),
     onChangeConfirmPassword: value =>
