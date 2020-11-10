@@ -20,5 +20,9 @@
     "frontend/*",
     "frontend/ui/*",
     "frontend/utils/*"
-  ]
+  ],
+  "dependencies": {
+    "global": "^4.4.0",
+    "typescript": "^4.0.5"
+  }
 }
