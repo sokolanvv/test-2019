@@ -4,14 +4,13 @@ import { Column, Layout, Row } from '@ui/layout'
 import { Space, Text } from '@ui/text'
 import messages from '../../messages'
 
+import { Select, Option } from '@ui/select'
+
 interface Props {
   intl: InjectedIntl
 }
 
-const List = ({ rows, intl }: Props) => {
-  rows = rows.sort((a, b) => 
-    (a.profile.firstName + a.profile.lastName) < (b.profile.firstName + b.profile.lastName) ? 1 : -1 )
-
+const List = ({ rows, typeFilter, onFilterChange, intl }: Props) => {
   return (
     <Column>
       <Layout basis={60} />
@@ -20,6 +19,16 @@ const List = ({ rows, intl }: Props) => {
         <Text weight='medium' size='l'>
           {intl.formatMessage(messages.users)}
         </Text>
+        <Layout basis='60%' />
+        <Select
+          defaultValue={typeFilter}
+          onChange={onFilterChange}
+        >
+          <Option value={'1'}> {intl.formatMessage(messages.nameFiltOptUp)} </Option>
+          <Option value={'2'}> {intl.formatMessage(messages.nameFiltOptDown)} </Option>
+          <Option value={'3'}> {intl.formatMessage(messages.emailFiltOptUp)} </Option>
+          <Option value={'4'}> {intl.formatMessage(messages.emailFiltOptDown)} </Option>
+        </Select>
         <Layout basis='10%' />
       </Row>
       <Layout basis={20} />

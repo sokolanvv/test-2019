@@ -1,8 +1,6 @@
 import gql from 'graphql-tag'
 import * as actions from '../constants'
 
-import { login } from '../../login/actions'
-
 export const change = (field, value) => ({
   type: actions.change,
   field,

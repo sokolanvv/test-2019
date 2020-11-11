@@ -27,4 +27,20 @@ export default defineMessages({
     id: `${namespace}.lastLogin`,
     defaultMessage: 'последний вход',
   },
+  nameFiltOptUp: {
+    id: `${namespace}.nameFiltOptUp`,
+    defaultMessage: 'Имена в порядке A-Z'
+  },
+  nameFiltOptDown: {
+    id: `${namespace}.nameFiltOptDown`,
+    defaultMessage: 'Имена в порядке Z-A'
+  },
+  emailFiltOptUp: {
+    id: `${namespace}.emailFiltOptUp`,
+    defaultMessage: 'Email в порядке A-Z'
+  },
+  emailFiltOptDown: {
+    id: `${namespace}.emailFiltOptDown`,
+    defaultMessage: 'Email в порядке Z-A'
+  },
 })

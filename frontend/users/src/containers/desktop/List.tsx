@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { lifecycle } from 'recompose'
-import { load } from '../../actions/list'
+import { load, changeFilter } from '../../actions/list'
 import List from '../../components/desktop/List'
 
 const enhance = lifecycle({
@@ -12,8 +12,10 @@ const enhance = lifecycle({
 export default connect(
   state => ({
     rows: state.users.list.rows,
+    typeFilter: state.users.list.typeFilter,
   }),
   dispatch => ({
     onLoad: () => dispatch(load()),
+    onFilterChange: value => dispatch(changeFilter(value))
   })
 )(enhance(List))
