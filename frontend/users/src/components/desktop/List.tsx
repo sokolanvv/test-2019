@@ -24,10 +24,10 @@ const List = ({ rows, typeFilter, onFilterChange, intl }: Props) => {
           defaultValue={typeFilter}
           onChange={onFilterChange}
         >
-          <Option value={'1'}> {intl.formatMessage(messages.nameFiltOptUp)} </Option>
-          <Option value={'2'}> {intl.formatMessage(messages.nameFiltOptDown)} </Option>
-          <Option value={'3'}> {intl.formatMessage(messages.emailFiltOptUp)} </Option>
-          <Option value={'4'}> {intl.formatMessage(messages.emailFiltOptDown)} </Option>
+          <Option value={'1'}> {intl.formatMessage(messages.nameFiltOptDown)} </Option>
+          <Option value={'2'}> {intl.formatMessage(messages.nameFiltOptUp)} </Option>
+          <Option value={'3'}> {intl.formatMessage(messages.emailFiltOptDown)} </Option>
+          <Option value={'4'}> {intl.formatMessage(messages.emailFiltOptUp)} </Option>
         </Select>
         <Layout basis='10%' />
       </Row>

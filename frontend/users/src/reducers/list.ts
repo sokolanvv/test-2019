@@ -16,17 +16,17 @@ export default createReducer(initialState, {
     switch (value){
       case '1':
         newRows = state.rows.sort((a, b) => 
-          (a.profile.firstName + a.profile.lastName) > (b.profile.firstName + b.profile.lastName) ? 1 : -1 )
+          (a.profile.firstName + a.profile.lastName) < (b.profile.firstName + b.profile.lastName) ? 1 : -1 )
         break;
       case '2':
         newRows = state.rows.sort((a, b) => 
-          (a.profile.firstName + a.profile.lastName) < (b.profile.firstName + b.profile.lastName) ? 1 : -1 )
+          (a.profile.firstName + a.profile.lastName) > (b.profile.firstName + b.profile.lastName) ? 1 : -1 )
         break;
       case '3':
-        newRows = state.rows.sort((a, b) => a.email > b.email ? 1 : -1 )
+        newRows = state.rows.sort((a, b) => a.email < b.email ? 1 : -1 )
         break;
       case '4':
-        newRows = state.rows.sort((a, b) => a.email < b.email ? 1 : -1 )
+        newRows = state.rows.sort((a, b) => a.email > b.email ? 1 : -1 )
         break;
       default:
         break;
